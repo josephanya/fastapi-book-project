@@ -129,6 +129,18 @@ The API includes proper error handling for:
 - Invalid genre types
 - Malformed requests
 
+## Deployment
+
+The API is setup to be deployed to Heroku. To get started:
+
+1. Create a new project on Heroku.
+2. Go to your Heroku account settings and get your API key. 
+3. Go to your GitHub repository settings and add the following secrets:
+  - `HEROKU_API_KEY`: Your Heroku API key.
+  - `HEROKU_APP_NAME`: The name of your Heroku app. 
+4. Commit all the changes and push to the `main` branch.
+5. The CI/CD workflow will automatically run tests and deploy the application to Heroku.
+
 ## Contributing
 
 1. Fork the repository
