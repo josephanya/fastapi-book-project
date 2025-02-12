@@ -1,1 +1,1 @@
-web: bin/start.sh
+web: bin/start-nginx gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app
