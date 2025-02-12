@@ -1,3 +1,5 @@
 #!/bin/bash
-nginx -c /app/nginx.conf &
-uvicorn main:app --host 127.0.0.1 --port 8000          
+
+uvicorn main:app --host 127.0.0.1 --port 5000 --workers 4 &
+
+nginx -g 'daemon off;'
