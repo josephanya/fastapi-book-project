@@ -1,1 +1,1 @@
-web: nginx -c $HOME/nginx.conf & uvicorn main:app --host 0.0.0.0 --port $PORT
+web: nginx -c $HOME/nginx.conf & uvicorn main:app --host 0.0.0.0 --port $PORT 
