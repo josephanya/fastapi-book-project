@@ -1,1 +1,1 @@
-web: gunicorn main:app
+web: gunicorn main:app -k uvicorn.workers.UvicornWorker --bind 127.0.0.1:8000
