@@ -1,1 +1,1 @@
-web: bin/start-nginx uvicorn main:app --host 127.0.0.1 --port $PORT --workers 4
+web: uvicorn main:app --host 0.0.0.0 --port 8000
