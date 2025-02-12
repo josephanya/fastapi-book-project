@@ -1,1 +1,1 @@
-web: sh -c "uvicorn main:app --host 0.0.0.0 --port 8000 & nginx -p . -c ./config/nginx.conf"
+web: nginx -p . -c ./config/nginx.conf
