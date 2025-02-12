@@ -1,3 +1,3 @@
-uvicorn main:app --host 0.0.0.0 --port 5000 --proxy-headers &
+uvicorn main:app --host 0.0.0.0 --port $PORT --proxy-headers &
 
 exec nginx -g "daemon off;"
