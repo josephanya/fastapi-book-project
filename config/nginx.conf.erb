@@ -1,18 +1,19 @@
 daemon off;
+
+worker_processes <%= ENV['NGINX_WORKERS'] || 4 %>;
+
 events {
-    worker_connections 1024;
+    use epoll;
+    accept_mutex on;
+    worker_connections <%= ENV['NGINX_WORKER_CONNECTIONS'] || 1024 %>;
 }
 
 http {
     server {
         listen <%= ENV["PORT"] %>;
-        server_name fastapi-book-project-api-fae00fad75e8.herokuapp.com;
+
         location / {
             proxy_pass http://0.0.0.0:5000;
-            proxy_set_header Host $host;
-            proxy_set_header X-Real-IP $remote_addr;
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            proxy_set_header X-Forwarded-Proto $scheme;
         }
     }
 }
