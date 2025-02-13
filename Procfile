@@ -1,1 +1,1 @@
-web: bin/start-nginx gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app --bind 0.0.0.0:5000
+web: bin/start-nginx uvicorn main:app --host 0.0.0.0 --port 5000
