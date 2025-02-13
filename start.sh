@@ -1,4 +1,4 @@
 #!/bin/bash
-gunicorn -k uvicorn.workers.UvicornWorker main:app --bind unix:/tmp/nginx.socket &
+uvicorn main:app --host 0.0.0.0 --port 5000
 
 exec bin/start-nginx
