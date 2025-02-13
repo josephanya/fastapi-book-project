@@ -6,7 +6,7 @@ events {
 http {
     server {
         listen <%= ENV["PORT"] %>;
-        server_name 0.0.0.0;
+        server_name fastapi-book-project-api-fae00fad75e8.herokuapp.com;
         location / {
             proxy_pass http://0.0.0.0:5000;
             proxy_set_header Host $host;
